@@ -90,6 +90,10 @@ void ofApp::keyPressed(int key){
 	if( key == ' ' ){
 		resetParticles();
 	}
+	if( key == 'A'|| key == 'a'){
+		currentMode = PARTICLE_MODE_PAUSE;
+		currentModeStr = "A - PARTICLE_MODE_PAUSE: Pause particle";
+	}
 }
 
 //--------------------------------------------------------------

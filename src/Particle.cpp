@@ -89,12 +89,15 @@ void Particle::update(){
 
 		vel *= drag; 
 		vel += frc * 0.4;
-		
+	}
+	else if( mode == PARTICLE_MODE_PAUSE ){
+		vel*= 0;
+	}
 		//we do this so as to skip the bounds check for the bottom and make the particles go back to the top of the screen
 		if( pos.y + vel.y > ofGetHeight() ){
 			pos.y -= ofGetHeight();
 		}
-	}
+	
 	else if( mode == PARTICLE_MODE_NEAREST_POINTS ){
 		
 		if( attractPoints ){
@@ -177,7 +180,9 @@ void Particle::draw(){
 	else if( mode == PARTICLE_MODE_NEAREST_POINTS ){
 		ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
 	}
-			
+	else if( mode == PARTICLE_MODE_PAUSE ){
+		ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
+	}		
 	ofDrawCircle(pos.x, pos.y, scale * 4.0);
 }
 
