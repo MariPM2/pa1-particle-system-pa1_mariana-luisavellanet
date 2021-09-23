@@ -50,6 +50,7 @@ void ofApp::draw(){
     ofBackgroundGradient(ofColor(0,255,255), ofColor(0,0,128));
 
 	for(unsigned int i = 0; i < p.size(); i++){
+
 		p[i].draw();
 	}
 	
@@ -93,6 +94,10 @@ void ofApp::keyPressed(int key){
 	if( key == 'A'|| key == 'a'){
 		currentMode = PARTICLE_MODE_PAUSE;
 		currentModeStr = "A - PARTICLE_MODE_PAUSE: Pause particle";
+	}
+	if (key == 'I'|| key == 'i'){
+		currentMode = PARTICLE_MODE_INCREASE_SIZE;
+		currentModeStr = "I - PARTICLE_MODE_INCREASE_SIZE";
 	}
 }
 
