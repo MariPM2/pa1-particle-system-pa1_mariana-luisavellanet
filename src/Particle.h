@@ -6,8 +6,9 @@ enum particleMode{
 	PARTICLE_MODE_REPEL,
 	PARTICLE_MODE_NEAREST_POINTS,
 	PARTICLE_MODE_NOISE,
-	PARTICLE_MODE_PAUSE,
-	PARTICLE_MODE_INCREASE_SIZE
+	PARTICLE_MODE_PAUSE
+	// PARTICLE_MODE_INCREASE_SIZE
+	// PARTICLE_MODE_DECREASE_SIZE
 };
 
 class Particle{
@@ -17,11 +18,13 @@ class Particle{
 		
 		void setMode(particleMode newMode);	
 		void setAttractPoints( vector <glm::vec3> * attract );
+		void setScale(float newScale);
 		void attractToPoint(int, int);
 		void repelFromPoint(int, int);
 		void reset();
 		void update();
-		void draw();		
+		void draw();
+		float getScale();
 		
 		glm::vec3 pos;
 		glm::vec3 vel;

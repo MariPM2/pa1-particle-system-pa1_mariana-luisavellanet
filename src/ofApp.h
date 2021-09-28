@@ -10,6 +10,8 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();
 		void resetParticles();
+		void sizeUp();
+		void sizeDown();
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
@@ -25,7 +27,7 @@ class ofApp : public ofBaseApp{
 		
 		particleMode currentMode;
 		string currentModeStr; 
-
+	
 		vector <Particle> p;
 		vector <glm::vec3> attractPoints;
 		vector <glm::vec3> attractPointsWithMovement;

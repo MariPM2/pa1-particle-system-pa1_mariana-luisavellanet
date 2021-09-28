@@ -138,10 +138,7 @@ void Particle::update(){
 		}
 		
 	}
-	else if( mode == PARTICLE_MODE_INCREASE_SIZE){
-	scale = ofRandom(1.5,3.0);
-}
-	// UPDATE OUR POSITION
+
 	
 	pos += vel; 
 	
@@ -184,9 +181,13 @@ void Particle::draw(){
 	else if( mode == PARTICLE_MODE_PAUSE ){
 		ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
 	}	
-	else if( mode == PARTICLE_MODE_INCREASE_SIZE ){
-		ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
-	}
 	ofDrawCircle(pos.x, pos.y, scale * 4.0);
+}
+
+void Particle::setScale(float newScale){
+	scale = newScale;
+}
+float Particle::getScale(){
+	return scale;
 }
 
