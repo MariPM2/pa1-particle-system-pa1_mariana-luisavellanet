@@ -122,6 +122,14 @@ void ofApp::keyPressed(int key)
 	{
 		sizeDown();
 	}
+	if (key == 'F' || key == 'f')
+	{
+		increacevel();
+	}
+	if (key == 'S' || key == 's')
+	{
+		decreacevel();
+	}
 }
 
 //--------------------------------------------------------------
@@ -190,5 +198,27 @@ void ofApp::sizeDown()
 	for (unsigned int i = 0; i < p.size(); i++)
 	{
 		p[i].setScale(0.33*p[i].getScale());
+	}
+}
+
+//--------------------------------------------------------------
+void ofApp::increacevel()
+{
+	for (unsigned int i = 0; i < p.size(); i++)
+	{
+		p[i].setVelx(4*p[i].getvelx());
+		p[i].setVely(4*p[i].getvely());
+		p[i].setVelz(4*p[i].getvelz());
+	}
+}
+
+//--------------------------------------------------------------
+void ofApp::decreacevel()
+{
+	for (unsigned int i = 0; i < p.size(); i++)
+	{
+		p[i].setVelx(0.25*p[i].getvelx());
+		p[i].setVely(0.25*p[i].getvely());
+		p[i].setVelz(0.25*p[i].getvelz());
 	}
 }

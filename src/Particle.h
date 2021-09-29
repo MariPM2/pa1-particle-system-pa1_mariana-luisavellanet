@@ -19,12 +19,18 @@ class Particle{
 		void setMode(particleMode newMode);	
 		void setAttractPoints( vector <glm::vec3> * attract );
 		void setScale(float newScale);
+		void setVelx(float XnewVel);
+		void setVely(float YnewVel);
+		void setVelz(float ZnewVel);
 		void attractToPoint(int, int);
 		void repelFromPoint(int, int);
 		void reset();
 		void update();
 		void draw();
 		float getScale();
+		float getvelx();
+		float getvely();
+		float getvelz();
 		
 		glm::vec3 pos;
 		glm::vec3 vel;

@@ -190,4 +190,21 @@ void Particle::setScale(float newScale){
 float Particle::getScale(){
 	return scale;
 }
-
+void Particle::setVelx(float XnewVel){
+	vel.x = XnewVel;
+}
+void Particle::setVely(float YnewVel){
+	vel.y = YnewVel;
+}
+void Particle::setVelz(float ZnewVel){
+	vel.z = ZnewVel;
+}
+float Particle::getvelx(){
+	return vel.x;
+}
+float Particle::getvely(){
+	return vel.y;
+}
+float Particle::getvelz(){
+	return vel.z;
+}

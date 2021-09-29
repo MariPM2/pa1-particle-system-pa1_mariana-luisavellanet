@@ -12,6 +12,8 @@ class ofApp : public ofBaseApp{
 		void resetParticles();
 		void sizeUp();
 		void sizeDown();
+		void increacevel();
+		void decreacevel();
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
