@@ -12,8 +12,8 @@ class ofApp : public ofBaseApp{
 		void resetParticles();
 		void sizeUp();
 		void sizeDown();
-		void increacevel();
-		void decreacevel();
+		void increaseVel();
+		void decreaseVel();
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
@@ -29,9 +29,15 @@ class ofApp : public ofBaseApp{
 		
 		particleMode currentMode;
 		string currentModeStr; 
+		int replaykey;
 	
 		vector <Particle> p;
 		vector <glm::vec3> attractPoints;
 		vector <glm::vec3> attractPointsWithMovement;
+
+		vector <int> keys;
+		bool record = false;
+		bool replay = false;
+		int counter = 100;
 		
 };

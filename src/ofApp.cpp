@@ -44,6 +44,23 @@ void ofApp::update()
 		p[i].setMode(currentMode);
 		p[i].update();
 	}
+	if(replay == true){
+		if(keys.size() == 0){
+			replay = false;
+		}
+		if(counter==0){
+			reverse(keys.begin(), keys.end());
+			replaykey = keys.back();
+			keyPressed(replaykey);
+			keys.pop_back();
+			counter = 100;
+			reverse(keys.begin(), keys.end());
+		}
+		else{
+			counter--;
+		}
+
+	}
 
 	//lets add a bit of movement to the attract points
 	for (unsigned int i = 0; i < attractPointsWithMovement.size(); i++)
@@ -77,12 +94,21 @@ void ofApp::draw()
 	}
 
 	ofSetColor(230);
-	ofDrawBitmapString(currentModeStr + "\n\nSpacebar to reset. \nKeys 1-4 to change mode.", 10, 20);
+	ofDrawBitmapString(currentModeStr + "\n\nSpacebar to reset. \nKeys 1-4 to change mode. \nPress A to pause. \nPress I to increase size \nPress D to decrease size. \nPress F to speed up. \nPress S to slow down. \nPress R to start and stop recording. \nPress P to replay. \nPress C to cancel replay.", 10, 20);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key)
 {
+	if(replay == true){
+		if(key =='C'|| key == 'c'){
+			replay = false;
+		}
+		else if(key != replaykey){
+			return;
+		}
+		key = replaykey;
+	}
 	if (key == '1')
 	{
 		currentMode = PARTICLE_MODE_ATTRACT;
@@ -124,11 +150,22 @@ void ofApp::keyPressed(int key)
 	}
 	if (key == 'F' || key == 'f')
 	{
-		increacevel();
+		increaseVel();
 	}
 	if (key == 'S' || key == 's')
 	{
-		decreacevel();
+		decreaseVel();
+	}
+	if (key == 'R' || key == 'r'){
+		currentModeStr = "R - Record: Recording in session";
+		record =! record;
+	}
+	if (record == true){
+		keys.push_back(key);
+	}
+	if (key == 'P'|| key == 'p'){
+		currentModeStr = "P-Replay: Recording is being played";
+		replay = true;
 	}
 }
 
@@ -202,7 +239,7 @@ void ofApp::sizeDown()
 }
 
 //--------------------------------------------------------------
-void ofApp::increacevel()
+void ofApp::increaseVel()
 {
 	for (unsigned int i = 0; i < p.size(); i++)
 	{
@@ -213,7 +250,7 @@ void ofApp::increacevel()
 }
 
 //--------------------------------------------------------------
-void ofApp::decreacevel()
+void ofApp::decreaseVel()
 {
 	for (unsigned int i = 0; i < p.size(); i++)
 	{
