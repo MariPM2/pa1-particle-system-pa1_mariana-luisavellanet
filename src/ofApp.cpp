@@ -94,7 +94,8 @@ void ofApp::draw()
 	}
 
 	ofSetColor(230);
-	ofDrawBitmapString(currentModeStr + "\n\nSpacebar to reset. \nKeys 1-4 to change mode. \nPress A to pause. \nPress I to increase size \nPress D to decrease size. \nPress F to speed up. \nPress S to slow down. \nPress R to start and stop recording. \nPress P to replay. \nPress C to cancel replay.", 10, 20);
+	ofDrawBitmapString(currentModeStr + "\n\nSpacebar to reset. \nKeys 1-4 to change mode. \nPress A to pause. \nPress I to increase size \nPress D to decrease size."
+	"\nPress F to speed up. \nPress S to slow down. \nPress R to start and stop recording. \nPress P to replay. \nPress C to cancel replay. \n Press T to Change Figure to Triangule. \n Press Q to Change Figure to Circule.", 10, 20);
 }
 
 //--------------------------------------------------------------
@@ -166,6 +167,14 @@ void ofApp::keyPressed(int key)
 	if (key == 'P'|| key == 'p'){
 		currentModeStr = "P-Replay: Recording is being played";
 		replay = true;
+	}
+	if (key == 'Q' || key == 'q'){
+		currentModeStr = "Q-Circule: Circule Figure";
+		changeParticuleFigure(PARTICLE_FIGURE_CIRCULE);
+	}
+	if (key == 'T' || key == 't'){
+		currentModeStr = "T-Triangule: Triangule Figure";
+		changeParticuleFigure(PARTICLE_FIGURE_TRIANGULE);
 	}
 }
 
@@ -257,5 +266,12 @@ void ofApp::decreaseVel()
 		p[i].setVelx(0.25*p[i].getvelx());
 		p[i].setVely(0.25*p[i].getvely());
 		p[i].setVelz(0.25*p[i].getvelz());
+	}
+}
+void ofApp::changeParticuleFigure(particleFigure FigureType)
+{
+	for (unsigned int i = 0; i < p.size(); i++)
+	{
+		p[i].setFigure(FigureType);
 	}
 }

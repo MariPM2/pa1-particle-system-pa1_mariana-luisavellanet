@@ -14,6 +14,7 @@ class ofApp : public ofBaseApp{
 		void sizeDown();
 		void increaseVel();
 		void decreaseVel();
+		void changeParticuleFigure(particleFigure FigureType);
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
@@ -30,6 +31,7 @@ class ofApp : public ofBaseApp{
 		particleMode currentMode;
 		string currentModeStr; 
 		int replaykey;
+
 	
 		vector <Particle> p;
 		vector <glm::vec3> attractPoints;

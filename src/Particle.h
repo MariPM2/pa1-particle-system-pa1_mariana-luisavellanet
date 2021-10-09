@@ -10,6 +10,10 @@ enum particleMode{
 	// PARTICLE_MODE_INCREASE_SIZE
 	// PARTICLE_MODE_DECREASE_SIZE
 };
+enum particleFigure{
+	PARTICLE_FIGURE_TRIANGULE,
+	PARTICLE_FIGURE_CIRCULE
+};
 
 class Particle{
 
@@ -17,6 +21,7 @@ class Particle{
 		Particle();
 		
 		void setMode(particleMode newMode);	
+		void setFigure(particleFigure newFigure);
 		void setAttractPoints( vector <glm::vec3> * attract );
 		void setScale(float newScale);
 		void setVelx(float XnewVel);
@@ -41,6 +46,7 @@ class Particle{
 		float scale;
 		
 		particleMode mode;
+		particleFigure Figure;
 		
 		vector <glm::vec3> * attractPoints; 
 };

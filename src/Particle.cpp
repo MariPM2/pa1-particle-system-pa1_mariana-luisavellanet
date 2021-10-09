@@ -3,12 +3,18 @@
 //------------------------------------------------------------------
 Particle::Particle(){
 	attractPoints = NULL;
+	Figure = PARTICLE_FIGURE_CIRCULE;
 }
 
 //------------------------------------------------------------------
 void Particle::setMode(particleMode newMode){
 	mode = newMode;
 }
+//------------------------------------------------------------------
+void Particle::setFigure(particleFigure newFigure){
+	Figure = newFigure;
+}
+
 
 //------------------------------------------------------------------
 void Particle::setAttractPoints( vector <glm::vec3> * attract ){
@@ -181,9 +187,17 @@ void Particle::draw(){
 	else if( mode == PARTICLE_MODE_PAUSE ){
 		ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
 	}	
-	ofDrawCircle(pos.x, pos.y, scale * 4.0);
-}
+	if(Figure == PARTICLE_FIGURE_CIRCULE){
+		ofDrawCircle(pos.x, pos.y, scale * 4.0);
+	}
+	else if(Figure == PARTICLE_FIGURE_TRIANGULE){
+		glm::vec2 p1 = {pos.x + 4.0 * scale, pos.y};
+		glm::vec2 p2 = {pos.x - 4.0 *scale,pos.y};
+		glm::vec2 p3 ={pos.x, pos.y + 4.0 * scale};
 
+		ofDrawTriangle(p1,p2,p3);	
+	}
+}
 void Particle::setScale(float newScale){
 	scale = newScale;
 }
