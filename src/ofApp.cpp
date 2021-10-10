@@ -169,12 +169,12 @@ void ofApp::keyPressed(int key)
 		replay = true;
 	}
 	if (key == 'Q' || key == 'q'){
-		currentModeStr = "Q-Circule: Circule Figure";
-		changeParticuleFigure(PARTICLE_FIGURE_CIRCULE);
+		currentModeStr = "Q-Circle: Circle Figure";
+		changeParticuleFigure(PARTICLE_FIGURE_CIRCLE);
 	}
 	if (key == 'T' || key == 't'){
-		currentModeStr = "T-Triangule: Triangule Figure";
-		changeParticuleFigure(PARTICLE_FIGURE_TRIANGULE);
+		currentModeStr = "T-Triangle: Triangle Figure";
+		changeParticuleFigure(PARTICLE_FIGURE_TRIANGLE);
 	}
 }
 

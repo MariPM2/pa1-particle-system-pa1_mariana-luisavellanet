@@ -3,7 +3,7 @@
 //------------------------------------------------------------------
 Particle::Particle(){
 	attractPoints = NULL;
-	Figure = PARTICLE_FIGURE_CIRCULE;
+	Figure = PARTICLE_FIGURE_CIRCLE;
 }
 
 //------------------------------------------------------------------
@@ -187,10 +187,10 @@ void Particle::draw(){
 	else if( mode == PARTICLE_MODE_PAUSE ){
 		ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
 	}	
-	if(Figure == PARTICLE_FIGURE_CIRCULE){
+	if(Figure == PARTICLE_FIGURE_CIRCLE){
 		ofDrawCircle(pos.x, pos.y, scale * 4.0);
 	}
-	else if(Figure == PARTICLE_FIGURE_TRIANGULE){
+	else if(Figure == PARTICLE_FIGURE_TRIANGLE){
 		glm::vec2 p1 = {pos.x + 4.0 * scale, pos.y};
 		glm::vec2 p2 = {pos.x - 4.0 *scale,pos.y};
 		glm::vec2 p3 ={pos.x, pos.y + 4.0 * scale};
