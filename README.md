@@ -22,3 +22,5 @@ If a partner has no commits in the repositories, he will receive a 0.
 
 ## Student Notes
 If you have any notes to add for your TA about the project specs or creative additions, you may do so in this section of the README
+Mariana Pérez Méndez (mariana.perez5@upr.edu)
+Luis G. Avellanet Irizarry (luis.avellanet2@upr.edu)
