@@ -95,7 +95,7 @@ void ofApp::draw()
 
 	ofSetColor(230);
 	ofDrawBitmapString(currentModeStr + "\n\nSpacebar to reset. \nKeys 1-4 to change mode. \nPress A to pause. \nPress I to increase size \nPress D to decrease size."
-	"\nPress F to speed up. \nPress S to slow down. \nPress R to start and stop recording. \nPress P to replay. \nPress C to cancel replay. \n Press T to Change Figure to Triangule. \n Press Q to Change Figure to Circule.", 10, 20);
+	"\nPress F to speed up. \nPress S to slow down. \nPress R to start and stop recording. \nPress P to replay. \nPress C to cancel replay. \nPress T to change figure to Triangle. \nPress Q to change figure to Circle.", 10, 20);
 }
 
 //--------------------------------------------------------------
